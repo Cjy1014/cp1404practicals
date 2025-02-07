@@ -10,7 +10,7 @@ def main():
 
 def get_score_result(score):
     """Determine the result based on the given score."""
-    if socre < 0 or score > 100:
+    if score < 0 or score > 100:
         return "Invalid score"
     elif score >= 90:
         return "Excellent"
