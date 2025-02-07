@@ -5,7 +5,7 @@ def main():
     print(get_score_result(score))
 
     random_score = random.randint(0,100)
-    print(f"Random score: {random_score}, Result: {get_score_result(random_score)}")")
+    print(f"Random score: {random_score}, Result: {get_score_result(random_score)}")
 
 
 def get_score_result(score):
