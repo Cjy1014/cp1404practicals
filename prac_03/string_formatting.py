@@ -1,8 +1,8 @@
-guitar = "Gibson L-5 CES"
+name = "Gibson L-5 CES"
 year = 1922
-price = 16036
+cost = 16035.9
 
-print(f"{year} {guitar} for about ${price:,}!")
+print(f"{year} {name} for about ${cost:,.0f}!")
 
 for i in range(11):
-    print(f"2 ^ {i:2} is {2**i:4}")
+    print(f"2 ^ {i:2} is {2**i:5}")
