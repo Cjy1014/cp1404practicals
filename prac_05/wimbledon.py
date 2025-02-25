@@ -41,3 +41,4 @@ def get_countries(filename):
     return countries
 
 main()
+
