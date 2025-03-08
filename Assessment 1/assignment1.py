@@ -30,6 +30,7 @@ def main():
         else:
             print("Invalid input, please try again.")
 
+
 def load_songs(filename):
     """Load song data from a CSV file."""
     songs = []
@@ -42,6 +43,7 @@ def load_songs(filename):
         print("File not found, please create a new file.")
     return songs
 
+
 def display_songs(songs):
     """Display all songs, sorted by and title, with a count of learned/unlearned songs."""
     songs.sort(key=lambda x: (x[2], x[0]))
@@ -53,6 +55,32 @@ def display_songs(songs):
 
     print(f"\n{learned_count} songs learned, {len(songs) - learned_count} songs still to learn.\n")
 
+
+def add_song(songs):
+    """Add a new song with validated inputs."""
+    title = input("Enter song title: ").strip()
+    while not title:
+        print("Title cannot be empty!")
+        title = input("Enter artist name: ").title()
+
+    artist = input("Enter artist: ").strip()
+    while not artist:
+        print("Artist cannot be empty!")
+        artist = input("Enter artist name: ").strip()
+
+    year = None
+    while year is None:
+        try:
+            year_input = input("Enter year: ")
+            year = int(year_input)
+            if year <= 0:
+                print("Year must be greater than 0.")
+                year = None
+        except ValueError:
+            print("Invalid input. Please enter a valid integer.")
+
+    songs.append([title, artist, year, "u"])
+    print(f"{title} by {artist} ({year}) added to song list.")
 
 
 
