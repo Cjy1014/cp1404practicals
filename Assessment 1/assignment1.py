@@ -1,7 +1,7 @@
 """
 Name: Jingyang Cai
 Date started: 24/2/2025
-GitHub URL:
+GitHub URL: https://github.com/Cjy1014/cp1404practicals/tree/prac_05-feedback
 """
 
 
@@ -41,6 +41,18 @@ def load_songs(filename):
     except FileNotFoundError:
         print("File not found, please create a new file.")
     return songs
+
+def display_songs(songs):
+    """Display all songs, sorted by and title, with a count of learned/unlearned songs."""
+    songs.sort(key=lambda x: (x[2], x[0]))
+    learned_count = sum(1 for song in songs if song[3] == "1")
+
+    for i, song in enumerate(songs, 1):
+        marker = "*" if song[3] == "u" else " "
+        print(f"{i}. {marker} {song[0]:30} - {song[1]:20} ({song[2]})")
+
+    print(f"\n{learned_count} songs learned, {len(songs) - learned_count} songs still to learn.\n")
+
 
 
 
