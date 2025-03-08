@@ -31,6 +31,5 @@ def main():
             print("Invalid input, please try again.")
 
 
-
 if __name__ == '__main__':
     main()
