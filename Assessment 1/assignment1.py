@@ -82,6 +82,7 @@ def add_song(songs):
     songs.append([title, artist, year, "u"])
     print(f"{title} by {artist} ({year}) added to song list.")
 
+
 def mark_song_learned(songs):
     """Mark an unlearned song as learned."""
     unlearned_songs = [song for song in songs if song[3] == "u"]
@@ -104,6 +105,12 @@ def mark_song_learned(songs):
             print("Please enter a valid integer.")
 
 
+def save_songs(filename, songs):
+    """Save song to a CSV file."""
+    with open(filename, "W") as file:
+        for song in songs:
+            file.write(",".join(map(str, song)) + "\n")
+        print(f"f{len(songs)} songs saved to {filename}.")
 
 
 if __name__ == '__main__':
