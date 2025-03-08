@@ -10,7 +10,7 @@ def main():
     FILE_NAME = "songs.csv"
     songs = load_songs(FILE_NAME)
 
-    print("Song List 1.0 - by Your Name")
+    print("Song List 1.0 - by Jingyang Cai")
     print(f"{len(songs)} songs loaded.\n")
 
     choice = ""
@@ -29,6 +29,19 @@ def main():
             print("Goodbye!")
         else:
             print("Invalid input, please try again.")
+
+def load_songs(filename):
+    """Load song data from a CSV file."""
+    songs = []
+    try:
+        with open(filename, "r") as file:
+            for line in file:
+                title, artist, year, learned = line.strip().split(",")
+                songs.append([title, artist, int(year),learned])
+    except FileNotFoundError:
+        print("File not found, please create a new file.")
+    return songs
+
 
 
 if __name__ == '__main__':
