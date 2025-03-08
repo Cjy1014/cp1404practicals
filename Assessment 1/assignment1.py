@@ -1,7 +1,7 @@
 """
 Name: Jingyang Cai
 Date started: 24/2/2025
-GitHub URL: https://github.com/Cjy1014/cp1404practicals/tree/prac_05-feedback
+GitHub URL: https://github.com/Cjy1014/cp1404practicals/tree/prac_05-feedback/Assessment%201
 """
 
 
@@ -81,6 +81,28 @@ def add_song(songs):
 
     songs.append([title, artist, year, "u"])
     print(f"{title} by {artist} ({year}) added to song list.")
+
+def mark_song_learned(songs):
+    """Mark an unlearned song as learned."""
+    unlearned_songs = [song for song in songs if song[3] == "u"]
+
+    if not unlearned_songs:
+        print("No more songs to learn!")
+        return
+
+    valid_selection = False
+    while not valid_selection:
+        try:
+            num = int("Enter the number of a song to mark as learned. ") - 1
+            if 0 <= num < len(songs) and songs[num][3] == "u":
+                songs[num][3] = "l"
+                print(f"{songs[num][0]} by {songs[num][1]} marked as learned!")
+                valid_selection = True
+            else:
+                print("Invalid input or song already learned.")
+        except ValueError:
+            print("Please enter a valid integer.")
+
 
 
 
