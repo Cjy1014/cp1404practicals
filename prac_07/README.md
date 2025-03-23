@@ -10,5 +10,4 @@ so I hope to learn many skills and knowledge of programming.
 - Try not to repeat code, but find cleaner ways to repeat tasks.
 # Links
 Programming Patterns page: https://github.com/CP1404/Starter/wiki/Programming-Patterns
-
 CP1404 Practicals instructions repo: https://github.com/Cjy1014/cp1404practicals/tree/master
